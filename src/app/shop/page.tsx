@@ -10,7 +10,7 @@ import card2 from '/public/images/chocolate.png'
 import card3 from '/public/images/imgs3.png'
 import icon from '/public/images/muffIco.png'
 import banner from '/public/images/Banner.png'
-import product from '/public/images/vector.png'
+import product from '/public/images/Vector.png'
 import star2 from '/public/images/star2.png'
 import {
     Select,

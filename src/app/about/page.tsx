@@ -13,7 +13,7 @@ import { BsCupHot } from "react-icons/bs"
 import person from '/public/images/Person.png'
 import stud from '/public/images/Student.png'
 import trans from '/public/images/yellowTrans.png'
-import mark from '/public/images/mark.png'
+import mark from '/public/images/Mark.png'
 import round from '/public/images/homeSec7.png'
 import numb from '/public/images/Quotes.png'
 import stars from '/public/images/star.png'
