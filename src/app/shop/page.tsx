@@ -1,5 +1,3 @@
-
-
 import { ChevronRight, Search, UserRound } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -59,7 +57,7 @@ function OurShop() {
                     <div className="flex gap-4 self-stretch my-auto" aria-label="Social media links">
                         <Search className=" absolute left-[1216px] top-2 shrink-0 w-6 h-6 aspect-square text-[#ffffff]" />
                         <UserRound className=" absolute left-[1256px] top-2 shrink-0 w-6 h-6 aspect-square text-[#ffffff]" />
-                        <PiHandbag className=" absolute left-[1296px] top-2 shrink-0 w-6 h-6 aspect-square text-[#ffffff]" />
+                        <Link href="/shop/shoppingcart"><PiHandbag className=" absolute left-[1296px] top-2 shrink-0 w-6 h-6 aspect-square text-[#ffffff]" /></Link>
                     </div>
                 </div>
             </div>
