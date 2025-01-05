@@ -3,7 +3,6 @@
 import React, { useState } from 'react'
 import { Search } from 'lucide-react'
 import Link from 'next/link'
-import { Input } from './ui/input'
 import { FiMenu } from 'react-icons/fi'
 import { PiHandbag } from 'react-icons/pi'
 

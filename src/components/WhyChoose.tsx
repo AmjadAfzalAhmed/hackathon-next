@@ -2,7 +2,13 @@ import Image from 'next/image'
 import { BsCupHot } from 'react-icons/bs'
 import bg1 from '/public/images/chooseBg.png'
 import stud from '/public/images/Student.png'
-import person from '/public/images/person.png'
+import person from '/public/images/Person.png'
+
+interface ChooseProps{
+  icon:React.ReactNode;
+  title:string;
+  description:string;
+}
 
 export default function WhyChoose() {
   return (
@@ -42,7 +48,7 @@ export default function WhyChoose() {
   )
 }
 
-function FeatureCard({ icon, title, description }) {
+function FeatureCard({ icon, title, description }:ChooseProps) {
   return (
     <div className="flex flex-col items-center text-center">
       {icon}

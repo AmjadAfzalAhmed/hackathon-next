@@ -1,4 +1,4 @@
-import { ChevronRight, Search, UserRound } from "lucide-react"
+import { ChevronRight, Search } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { PiHandbag } from "react-icons/pi"
@@ -29,7 +29,7 @@ const page = () => {
       {/* Header */}
       <div className="flex flex-col">
         <div className="flex relative flex-col items-center pb-28 w-full min-h-[410px] max-md:pb-24 max-md:max-w-full">
-          <Image src={bg} className="object-cover absolute inset-0 size-full" alt="About section background" />
+          <Image src={bgPic} className="object-cover absolute inset-0 size-full" alt="About section background" />
           <nav className="flex relative flex-col justify-center items-center self-stretch px-16 py-7 w-full bg-stone-950 max-md:px-5 max-md:max-w-full" aria-label="Main navigation">
             <div className="flex flex-wrap gap-5 justify-between items-center w-full max-w-[1320px] max-md:max-w-full">
               <a href="/" className="self-stretch text-2xl font-bold leading-none text-amber-500" aria-label="Foodtuck home">

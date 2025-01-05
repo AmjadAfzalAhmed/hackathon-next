@@ -1,4 +1,4 @@
-import { ChevronDown, Search } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 import Link from 'next/link';
 import { PiHandbag } from "react-icons/pi";
 

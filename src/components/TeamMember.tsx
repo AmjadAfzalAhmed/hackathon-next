@@ -1,7 +1,12 @@
 import Image from 'next/image'
 import { FaFacebookF, FaTwitter, FaYoutube, FaPinterest } from 'react-icons/fa'
 import trans from '/public/images/yellowTrans.png'
-import mark from '/public/images/mark.png'
+import mark from '/public/images/Mark.png'
+
+interface TeamProps{
+  name:string;
+  role:string;
+}
 
 export default function TeamMember() {
   return (
@@ -31,7 +36,7 @@ export default function TeamMember() {
   )
 }
 
-function TeamCard({ name, role }) {
+function TeamCard({ name, role }:TeamProps) {
   return (
     <div className="bg-white shadow-lg rounded-lg overflow-hidden">
       <Image src={mark} alt={name} className="w-full h-auto" />
@@ -40,20 +45,13 @@ function TeamCard({ name, role }) {
         <p className="text-gray-600">{role}</p>
       </div>
       <div className="absolute top-4 left-4 flex flex-col gap-2">
-        <SocialIcon Icon={FaFacebookF} />
-        <SocialIcon Icon={FaTwitter} />
-        <SocialIcon Icon={FaYoutube} bgColor="bg-amber-500" textColor="text-white" />
-        <SocialIcon Icon={FaPinterest} />
+        <FaFacebookF className='w-8 h-8 hover:bg-amber-500 hover:text-white flex items-center justify-center transition-colors'/>
+        <FaTwitter className='w-8 h-8hover:bg-amber-500 hover:text-white flex items-center justify-center transition-colors'/>
+        <FaYoutube className='bg-amber-500 text-white w-8 h-8 hover:bg-amber-500 hover:text-white flex items-center justify-center transition-colors'/>
+        <FaPinterest className='w-8 h-8 hover:bg-amber-500 hover:text-white flex items-center justify-center transition'/>
       </div>
     </div>
   )
 }
 
-function SocialIcon({ Icon, bgColor = "bg-white", textColor = "text-black" }) {
-  return (
-    <div className={`w-8 h-8 ${bgColor} ${textColor} hover:bg-amber-500 hover:text-white flex items-center justify-center transition-colors`}>
-      <Icon />
-    </div>
-  )
-}
 

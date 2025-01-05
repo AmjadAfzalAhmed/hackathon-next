@@ -15,7 +15,7 @@ function Footer() {
               <span className="text-amber-500">St</span>ill You Need Our Support ?
             </h2>
             <p className="text-base">
-              Don't wait make a smart & logical quote here. It's pretty easy.
+              Dont wait make a smart & logical quote here. Its pretty easy.
             </p>
           </div>
           <form className="w-full lg:w-auto">

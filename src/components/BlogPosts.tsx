@@ -1,9 +1,16 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import img1 from '/public/images/img1.png'
-import img2 from '/public/images/img2.png'
-import img3 from '/public/images/img3.png'
-import icon from '/public/images/Icon.png'
+import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
+import img1 from '/public/images/img1.png';
+import img2 from '/public/images/img2.png';
+import img3 from '/public/images/img3.png';
+import icon from '/public/images/Icon.png';
+
+
+interface BlogCardProps {
+  image: StaticImageData; 
+  date: string; 
+  title: string; 
+}
 
 export default function BlogPosts() {
   return (
@@ -32,10 +39,11 @@ export default function BlogPosts() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-function BlogCard({ image, date, title }) {
+// BlogCard component with props typing
+function BlogCard({ image, date, title }: BlogCardProps) {
   return (
     <article className="bg-white text-black rounded-lg overflow-hidden shadow-lg">
       <Image src={image} alt={title} className="w-full h-48 object-cover" />
@@ -43,11 +51,12 @@ function BlogCard({ image, date, title }) {
         <p className="text-amber-500 mb-2">{date}</p>
         <h4 className="text-xl font-bold mb-4">{title}</h4>
         <div className="flex justify-between items-center">
-          <Link href="/blog" className="text-amber-500 hover:underline">Learn More</Link>
+          <Link href="/blog" className="text-amber-500 hover:underline">
+            Learn More
+          </Link>
           <Image src={icon} alt="" className="w-16 h-4" />
         </div>
       </div>
     </article>
-  )
+  );
 }
-

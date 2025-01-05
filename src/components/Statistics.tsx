@@ -1,9 +1,15 @@
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import bgPic from '/public/images/menutop.png'
 import chef from '/public/images/chef.png'
 import soft from '/public/images/soft.png'
 import spoon from '/public/images/spoons.png'
 import pizza from '/public/images/pizza.png'
+
+interface StatItemProps {
+  image: StaticImageData;
+  number: string;
+  text: string;
+}
 
 export default function Statistics() {
   return (
@@ -35,7 +41,7 @@ export default function Statistics() {
 
 // React Functional Component to use images
 
-function StatItem({ image, number, text }) {
+function StatItem({ image, number, text }:StatItemProps) {
   return (
     <div className="flex flex-col items-center text-center">
       <div className="w-20 h-20 sm:w-24 sm:h-24 mb-4 relative">

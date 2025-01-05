@@ -70,7 +70,7 @@ export default function Hero() {
       {/* Hero Content */}
       <div className="container mx-auto mt-20 flex flex-col lg:flex-row items-center justify-between">
         <div className="lg:w-1/2 mb-10 lg:mb-0 pl-6">
-          <h2 className="text-2xl md:text-3xl text-amber-500 mb-2">It's Quick & Amusing!</h2>
+          <h2 className="text-2xl md:text-3xl text-amber-500 mb-2">Its Quick & Amusing!</h2>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             <span className="text-amber-500">Th</span>e Art of speed
             <br />

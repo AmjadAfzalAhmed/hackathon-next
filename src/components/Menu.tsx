@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import pic8 from '/public/images/bg.png'
 import pic9 from '/public/images/front.png'
 import lettuce from '/public/images/lettuce.png'
@@ -9,6 +9,12 @@ import glow from '/public/images/glow.png'
 import italian from '/public/images/italian.png'
 import slice from '/public/images/slice.png'
 import mushroom from '/public/images/mushroom.png'
+
+interface MenuItemProps {
+  image: StaticImageData;
+  name: string;
+  price: string;
+}
 
 export default function Menu() {
   return (
@@ -51,7 +57,7 @@ export default function Menu() {
   )
 }
 
-function MenuItem({ image, name, price }) {
+function MenuItem({ image, name, price }:MenuItemProps) {
   return (
     <div className="flex items-start space-x-4">
       <Image src={image} alt={name} className="w-20 h-20 object-cover rounded-md" />
