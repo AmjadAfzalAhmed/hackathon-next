@@ -1,175 +1,120 @@
+'use client'
+
 import Image from 'next/image'
+import Link from 'next/link'
+import { Search } from 'lucide-react'
+import { PiHandbag } from "react-icons/pi"
+import { FaFacebookF, FaTwitter, FaPinterestP } from 'react-icons/fa'
 import backG from '/public/images/heroBack.png'
 import heroImg from '/public/images/hero.png'
-import { ChevronDown, Search } from 'lucide-react'
-import Link from 'next/link';
-import { PiHandbag } from "react-icons/pi";
-import { FaFacebookF, FaTwitter, FaPinterestP } from 'react-icons/fa';
-import { TiTick } from 'react-icons/ti';
-import pic2 from '/public/images/pic2.png'
-import pic3 from '/public/images/pic3.png'
-import pic4 from '/public/images/pic4.png'
+import { FiMenu } from 'react-icons/fi'
+import { useState } from 'react'
+import { Input } from './ui/input'
 
+export default function Hero() {
 
-function Hero() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
+    <div className="relative min-h-screen flex flex-col items-center pb-20 px-4 md:px-0">
+      <Image src={backG} alt="Background" className="object-cover absolute inset-0 w-full h-full opacity-10" />
 
-    <div className="flex relative flex-col items-center pb-20 max-lg:w-[1920px] min-h-[950px] max-md:px-5 max-md:pt-24 max-md:w-full">
-      <Image src={backG} alt="Background" className="object-cover absolute inset-0 size-full opacity-10" />
       {/* Navbar */}
-      <div className="sm:w-[1320px] h-[78px] absolute top-6 flex flex-col">
-        <div className="self-center text-2xl font-bold leading-none text-white">
-          <span className="text-amber-500">Food</span>
-          <span className="text-white">tuck</span>
+      <nav className='flex justify-between items-center py-6 px-8 sm:px-4 drop-shadow-md'>
+
+        <ul className='hidden relative -left-44 xl:flex items-center gap-10 font-semibold text-white'>
+          <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/'>Home</Link></li>
+          <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/about'>Menu</Link></li>
+          <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/menu'>Blog</Link></li>
+          <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/pages'>Pages</Link></li>
+          <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/about'>About</Link></li>
+          <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/shop'>Shop</Link></li>
+          <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/signup'>Contact</Link></li>
+        </ul>
+
+        <div className='relative mb-12 sm:mb-0 -top-6'>
+          <a href="www.mysite.com" className='w-52 hover:scale-105 transition-all text-2xl text-white'>Food<span className='text-amber-500'>tuck</span></a>
         </div>
-        <nav aria-label="Main navigation" className="flex flex-wrap gap-5 justify-between w-full text-base text-white max-md:max-w-full">
-          <div className="flex gap-5 my-auto max-md:max-w-full">
-            <div className="flex gap-8 whitespace-nowrap">
-              <Link href="/" className="hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500">Home</Link>
-              <Link href="/menu" className="hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500">Menu</Link>
-              <Link href="/blog" className="hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500">Blog</Link>
-              <Link href="/pages" className="hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500">Pages</Link>
-            </div>
-            <div className="flex gap-px">
-              <Link href="/about" className="grow hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500">About</Link>
-              <ChevronDown className="object-contain shrink-0 my-auto w-4 h-4 aspect-square" />
-            </div>
-            <div className="flex gap-8">
-              <Link href="/shop" className="hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500">Shop</Link>
-              <Link href="/signup" className="hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500">Contact</Link>
-            </div>
-          </div>
-          <div className="flex gap-2 whitespace-nowrap">
-            <form className="flex flex-auto gap-10 px-7 py-4 rounded-3xl border border-amber-500 border-solid max-md:px-5">
-              <label className="sr-only">Search</label>
-              <input type="search" id="search-input" placeholder="Search..." className="bg-transparent text-white placeholder-white focus:outline-none" />
-              <button type="submit" aria-label="Search">
-                <Search className="object-contain shrink-0 w-6 aspect-square" />
-              </button>
-            </form>
-            <button aria-label="Shopping cart" className="focus:outline-none focus:ring-2 focus:ring-amber-500">
-              <PiHandbag className="object-contain shrink-0 my-auto w-6 h-6 aspect-square" />
-            </button>
-          </div>
-        </nav>
-      </div>
 
+        <div className="hidden relative left-48 md:flex items-center">
+          
+            <Input type="search" placeholder="Search..." className="bg-transparent border border-amber-500 rounded-full py-2 px-4 pr-10 focus:outline-none" />
+               <Search className="w-5 h-5 relative -left-10" />          
+          
+          <Link href="/shop/shoppingcart">
+            <PiHandbag className="w-6 h-6" />
+          </Link>
+        </div>
 
+        {/* Menu */}
+        <FiMenu className='relative -left-24 xl:hidden block text-5xl cursor-pointer text-white'
+          onClick={() => setIsMenuOpen(!isMenuOpen)} />
 
-      {/* Mid Section */}
-      <div className="midSec flex  ">
+        <div className={`absolute xl:hidden top-20 left-20 w-64 bg-stone-900 text-white rounded flex flex-col items-center gap-6 font-semibold text-lg transform transition-transform ${isMenuOpen ? "opacity-100" : "opacity-0"}`}
+          style={{ transition: "transform 0.3s ease, opacity 0.3s ease" }} >
+          <ul>
+            <li className='list-none w-full text-center p-4 hover:text-amber-500 cursor-pointer transition-all'><Link href='/'>Home</Link></li>
+            <li className='list-none w-full text-center p-4 hover:text-amber-500 cursor-pointer transition-all'><Link href='/menu'>Menu</Link></li>
+            <li className='list-none w-full text-center p-4 hover:text-amber-500 cursor-pointer transition-all'><Link href='/blog'>Blog</Link></li>
+            <li className='list-none w-full text-center p-4 hover:text-amber-500 cursor-pointer transition-all'><Link href='/pages'>Pages</Link></li>
+            <li className='list-none w-full text-center p-4 hover:text-amber-500 cursor-pointer transition-all'><Link href='/about'>About</Link></li>
+            <li className='list-none w-full text-center p-4 hover:text-amber-500 cursor-pointer transition-all'><Link href='/shop'>Shop</Link></li>
+            <li className='list-none w-full text-center p-4 hover:text-amber-500 cursor-pointer transition-all'><Link href='/contact'>Contact</Link></li>
 
-        {/* Left Section: Social Icons */}
-        <div className="heroCont1 w-[25.28px] min-h-[492px] flex flex-col items-center justify-between absolute top-[291px] left-[242px]">
-
-          {/* Line 1 */}
-          <div className="line1 w-[158px] h-[2px] -rotate-90 bg-[#ffffff]"></div>
-
-          {/* Social Icons */}
-          <div className="socials flex flex-col gap-4">
-            <div className="icon1 w-[25.28px] h-[25.21px] flex items-center justify-center text-white">
-              <FaFacebookF />
-            </div>
-            <div className="icon1 w-[25.28px] h-[25.21px] flex items-center justify-center text-[#ff9f0d]">
-              <FaTwitter />
-            </div>
-            <div className="icon1 w-[25.28px] h-[25.21px] flex items-center justify-center text-white">
-              <FaPinterestP />
-            </div>
-          </div>
-
-          {/* Line 2 */}
-          <div className="line2 w-[147px] h-[2px] -rotate-90 bg-[#ffffff]"></div>
+          </ul>
 
         </div>
 
+      </nav>
 
-        {/* Center Section: Heading and Content */}
-
-        <div
-          className="absolute top-[293px] left-[300px] flex flex-col items-start text-base text-white max-w-[472px] rounded-[30px]"
-          aria-label="Quick and Amusing Section"
-        >
-          <div
-            className="text-3xl leading-none text-amber-500"
-
-          >
-            Its Quick & Amusing!
-          </div>
-          <div
-            className="self-stretch mt-2 w-full text-6xl font-bold leading-[68px]">
-
-            <span className="text-amber-500">Th</span>
-            e Art of speed
+      {/* Hero Content */}
+      <div className="container mx-auto mt-20 flex flex-col lg:flex-row items-center justify-between">
+        <div className="lg:w-1/2 mb-10 lg:mb-0 pl-6">
+          <h2 className="text-2xl md:text-3xl text-amber-500 mb-2">It's Quick & Amusing!</h2>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+            <span className="text-amber-500">Th</span>e Art of speed
             <br />
             food Quality
-          </div>
-          <div
-            className="mt-8 leading-6"
-
-          >
+          </h1>
+          <p className="mb-6 text-sm md:text-base">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            <br />
             Varius sed pharetra dictum neque massa congue
-          </div>
-          <a
-            href="#menu"
-            className="px-14 py-5 mt-8 bg-amber-500 rounded-[30px] text-neutral-200 hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
-
+          </p>
+          <Link
+            href="/menu"
+            className="inline-block px-8 py-3 bg-amber-500 rounded-full text-neutral-200 hover:bg-amber-600 transition-colors"
           >
             See Menu
-          </a>
+          </Link>
         </div>
-
-
-        {/* Right Section: Featured Dish Image */}
-        <div className="absolute flex w-[877.8px] h-[670px] top-[198px] left-[939px]">
+        <div className="lg:w-1/2">
           <Image
             src={heroImg}
             alt="Featured dish presentation"
-            className="object-cover w-full h-auto"
+            width={877}
+            height={670}
+            className="w-full h-auto rounded-lg"
           />
         </div>
-
       </div>
 
-
-
-      <div className="about w-[1320px] h-[562px] absolute top-[1070px] left-[300px] flex">
-        <div className="left w-[562px] h-[562px] flex flex-col text-white">
-          <p className='text-[#ff9f0d] font-normal text-[32px]'>about us</p>
-          <div className="w-[446px] h-[110px] font-bold text-[48px] leading-14 text-[#ff9f0d]">
-            We <span className='text-white'>create the best foody product</span>
-          </div>
-          <p className='w-[526px] h-[130px] font-normal text-white text-[16px] mt-14 text-justify'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat
-            fringilla bibendum. Urna, elit augue urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae
-            mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.</p>
-
-          <div className="div flex items-center">
-            <TiTick className='w-[17px] h-[12.24px]' /><p>Lacus nisi, et ac dapibus sit eu velit in consequat.</p>
-          </div>
-          <div className="div flex items-center">
-            <TiTick className='w-[17px] h-[12.24px]' /><p> Quisque diam pellentesque bibendum non dui volutpat fringilla </p>
-          </div>
-          <div className="div flex items-center">
-            <TiTick className='w-[17px] h-[12.24px]' /><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <button className='w-[190px] h-[60px] bg-[#ff9f0d] text-white text-[16px] leading-6 rounded-[30px] mt-8'>Read More</button>
+      {/* Social Icons */}
+      <div className="absolute left-4 top-1/2 transform -translate-y-1/2 hidden lg:flex flex-col items-center space-y-6">
+        <div className="w-[2px] h-[158px] bg-white"></div>
+        <div className="flex flex-col space-y-4">
+          <a href="#" className="text-white hover:text-amber-500 transition-colors">
+            <FaFacebookF />
+          </a>
+          <a href="#" className="text-amber-500 hover:text-white transition-colors">
+            <FaTwitter />
+          </a>
+          <a href="#" className="text-white hover:text-amber-500 transition-colors">
+            <FaPinterestP />
+          </a>
         </div>
-        <div className="right images flex flex-col gap-3">
-          <Image src={pic2} alt='about-pic1' width={660} height={330} className='rounded-[6px]' />
-          <div className="lower flex gap-3">
-            <Image src={pic3} alt='about-pic2' width={322} height={194} className='rounded-[6px]' />
-            <Image src={pic4} alt='about-pic3' width={322} height={194} className='rounded-[6px]' />
-          </div>
-        </div>
+        <div className="w-[2px] h-[147px] bg-white"></div>
       </div>
-
-
-
     </div>
-
   )
 }
 
-export default Hero

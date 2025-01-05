@@ -19,55 +19,47 @@ import fork from '/public/images/fork.png'
 import baker from '/public/images/baker.png'
 import restaurant from '/public/images/restaurant.png'
 import Footer from "@/components/Footer"
+import { FiUser } from "react-icons/fi"
 
 
 const page = () => {
   return (
-    <main className="w-[1920px] h-[5282px]">
+    <main className="h-[5282px]">
 
       {/* Header */}
-      <div className="w-[1920px] min-h-[90px] flex items-center bg-stone-950 " >
-        <div className="w-[1320px] h-8 absolute top-[29px] left-[300px] flex flex-wrap gap-10 items-center">
-          <div className="w-[109px] h-8 self-stretch text-2xl font-bold leading-none text-amber-500 ">
+      <div className="flex flex-col">
+        <div className="flex relative flex-col items-center pb-28 w-full min-h-[410px] max-md:pb-24 max-md:max-w-full">
+          <Image src={bg} className="object-cover absolute inset-0 size-full" alt="About section background" />
+          <nav className="flex relative flex-col justify-center items-center self-stretch px-16 py-7 w-full bg-stone-950 max-md:px-5 max-md:max-w-full" aria-label="Main navigation">
+            <div className="flex flex-wrap gap-5 justify-between items-center w-full max-w-[1320px] max-md:max-w-full">
+              <a href="/" className="self-stretch text-2xl font-bold leading-none text-amber-500" aria-label="Foodtuck home">
+                F<span className="text-white">oo</span>d<span className="text-amber-500">tuck</span>
+              </a>
+              <div className="flex flex-wrap gap-8 self-stretch my-auto text-base text-white max-md:max-w-full" >
+                <Link href="/" className="grow font-bold text-amber-500" >Home</Link>
+                <Link href="/menu" className="hover:text-amber-500" >Menu</Link>
+                <Link href="/blog" className="hover:text-amber-500" >Blog</Link>
+                <Link href="/pages" className="hover:text-amber-500" >Pages</Link>
+                <Link href="/about" className="hover:text-amber-500" >About</Link>
+                <Link href="/shop" className="hover:text-amber-500" >Shop</Link>
+                <Link href="/contact" className="hover:text-amber-500" >Contact</Link>
+              </div>
+              <div className="flex gap-4 self-stretch my-auto" aria-label="Social media links">
 
-            <span className="text-white">Food</span>
+                <Search className="object-contain shrink-0 w-6 h-6 aspect-square text-white" />
+                <FiUser className="object-contain shrink-0 w-6 h-6 aspect-square text-white" />
+                <PiHandbag className="object-contain shrink-0 w-6 h-6 aspect-square text-white" />
 
-            <span className="text-amber-500">tuck</span>
-          </div>
-          <nav className="max-w-[508px] h-6 flex flex-wrap absolute top-2 left-[451px] gap-8 self-stretch text-base text-white max-md:max-w-full" aria-label="Main navigation">
-            <Link href="/" className="grow font-bold text-amber-500" aria-current="page">Home</Link>
-            <Link href="/menu">Menu</Link>
-            <Link href="/blog">Blog</Link>
-            <Link href="/pages">Pages</Link>
-            <Link href="/about">About</Link>
-            <Link href="/shop">Shop</Link>
-            <Link href="/contact">Contact</Link>
+              </div>
+            </div>
           </nav>
-          <div className="flex gap-4 self-stretch my-auto" aria-label="Social media links">
-            <Search className=" absolute left-[1216px] top-2 shrink-0 w-6 h-6 aspect-square text-[#ffffff]" />
-            <UserRound className=" absolute left-[1256px] top-2 shrink-0 w-6 h-6 aspect-square text-[#ffffff]" />
-            <PiHandbag className=" absolute left-[1296px] top-2 shrink-0 w-6 h-6 aspect-square text-[#ffffff]" />
-          </div>
+          <h1 className="relative mt-28 text-5xl font-bold leading-none text-white max-md:mt-10 max-md:text-4xl">About Us</h1>
+          <nav className="flex relative gap-1 mt-5 mb-0 max-w-full text-xl leading-snug whitespace-nowrap w-[137px] max-md:mb-2.5" aria-label="Breadcrumb">
+            <a href="/" className="grow text-white hover:text-amber-500">Home</a>
+            <ChevronRight className="object-contain shrink-0 my-auto w-4 aspect-square text-white" />
+            <span className="text-amber-500" aria-current="page">About</span>
+          </nav>
         </div>
-      </div>
-
-      <div className="w-[1920px] h-[410px]">
-        <Image
-          src={bgPic}
-          className="object-contain w-full aspect-[4.67] -z-10"
-          alt="Decorative banner image"
-        />
-        <div className='w-[225px] h-[104px] z-100'>
-          <h1 className='text-white text-5xl font-bold absolute top-[198px] left-[850px] leading-14'>Our Menu</h1>
-
-          <div className='w-[133px] h-7 flex items-center absolute top-[274px] left-[897px]'>
-            <Link href='/' className='text-white text-[20px] leading-7'>Home</Link>
-            <ChevronRight className='w-5 h-5 text-white' />
-            <Link href='menu' className='text-[#ff9f0d] text-[20px] font-normal leading-7'>Menu</Link>
-          </div>
-
-        </div>
-
       </div>
       {/* Header ends here */}
 

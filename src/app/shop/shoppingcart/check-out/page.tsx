@@ -16,9 +16,6 @@ import {
 import Link from 'next/link'
 
 
-
-
-
 const page = () => {
   return (
     <main className='w-[1920px] h-[2147px]' >

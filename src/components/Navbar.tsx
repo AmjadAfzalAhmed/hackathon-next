@@ -32,9 +32,7 @@ const Navbar = () => {
                         <form className="flex flex-auto gap-10 px-7 py-4 rounded-3xl border border-amber-500 border-solid max-md:px-5" role="search">
                             
                             <input type="search" id="search-input" placeholder="Search..." className="bg-transparent text-white placeholder-white focus:outline-none" />
-                            <button type="submit" aria-label="Search">
-                                <Search className="object-contain shrink-0 w-6 aspect-square" />
-                            </button>
+                            
                         </form>
                         <button aria-label="handbag" className="focus:outline-none focus:ring-2 focus:ring-amber-500">
                             <PiHandbag className="object-contain shrink-0 my-auto w-6 aspect-square" />
