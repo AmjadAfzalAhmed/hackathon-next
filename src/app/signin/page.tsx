@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { ChevronRight, Lock, User } from 'lucide-react'
+import { ChevronRight, Lock } from 'lucide-react'
 import bgPic from '/public/images/menutop.png'
 import Link from 'next/link'
 import { Input } from '@/components/ui/input'
@@ -13,7 +13,7 @@ import watch from '/public/images/Watch.png'
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
 
 
-const SignUp = () => {
+const SignIn = () => {
     return (
         <main className='w-full h-[1800px]' >
             {/* Header */}
@@ -34,13 +34,9 @@ const SignUp = () => {
             {/* Mid Section */}
             <div className="flex justify-center items-center min-h-screen bg-gray-100 p-4">
                 <div className="w-full max-w-md bg-white shadow-lg rounded-lg p-6 space-y-6">
-                    <h2 className='text-2xl font-semibold mb-6'>Sign Up</h2>
+                    <h2 className='text-2xl font-semibold mb-6'>Sign In</h2>
 
-                    <div className="space-y-4">
-                        <div className="relative">
-                            <Input placeholder='Name' className='w-full pl-10 border border-solid border-slate-400 rounded' />
-                            <User className='w-5 h-5 absolute top-2 left-3 text-gray-400' />
-                        </div>
+                    <div className="space-y-4">                        
 
                         <div className="relative">
                             <Input placeholder='Email' className='w-full pl-10 border border-solid border-slate-400 rounded' />
@@ -59,7 +55,7 @@ const SignUp = () => {
                     </div>
 
                     <button className='w-full py-2 bg-amber-500 text-white font-semibold text-center rounded hover:bg-amber-600 transition-colors'>
-                        Sign Up
+                        Sign In
                     </button>
 
                     <p className='text-right'><a href="#" className="text-blue-500 hover:underline">Forgot Password?</a></p>
@@ -76,19 +72,19 @@ const SignUp = () => {
                     <div className="space-y-4">
                         <button className='w-full py-2 px-4 border border-solid border-slate-400 flex items-center justify-center space-x-2 rounded hover:bg-gray-50 transition-colors'>
                             <Image src={Google} alt='Google Logo' width={24} height={24} />
-                            <span>Sign up with Google</span>
+                            <span>Sign in with Google</span>
                         </button>
 
                         <button className='w-full py-2 px-4 border border-solid border-slate-400 flex items-center justify-center space-x-2 rounded hover:bg-gray-50 transition-colors'>
                             <Image src={Apple} alt='Apple Logo' width={24} height={24} />
-                            <span>Sign up with Apple</span>
+                            <span>Sign in with Apple</span>
                         </button>
                     </div>
                 </div>
             </div>
 
             {/* Footer */}
-            <div className='sm:w-full sm:absolute sm:top-[1080px]'>
+            <div className='sm:w-full sm:absolute sm:top-[1050px]'>
                 <footer className="bg-stone-950 text-white">
                     <div className="container mx-auto px-4 py-16 lg:py-32">
                         {/* Newsletter Section */}
@@ -237,4 +233,4 @@ const SignUp = () => {
     )
 }
 
-export default SignUp
+export default SignIn
