@@ -2,7 +2,7 @@ import Image from 'next/image'
 import round from '/public/images/homeSec7.png'
 import numb from '/public/images/Quotes.png'
 import stars from '/public/images/star.png'
-import sideImg from '/public/images/sideImg.png'
+
 
 export default function Testimony() {
   return (
@@ -45,11 +45,7 @@ export default function Testimony() {
               <div className="text-base text-zinc-500">Food Specialist</div>
             </div>
           </div>
-          <Image
-            src={sideImg}
-            alt="Decorative dots"
-            className="mt-8 mx-auto"
-          />
+         
         </div>
       </div>
     </section>

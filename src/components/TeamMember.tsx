@@ -14,7 +14,7 @@ export default function TeamMember() {
       <Image
         src={trans}
         alt="Team member background"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-[480px] object-cover"
       />
       <div className="absolute inset-0 bg-amber-500 opacity-70"></div>
       <div className="relative z-10 container mx-auto px-4">
@@ -25,7 +25,7 @@ export default function TeamMember() {
             Varius sed pharetra dictum neque massa congue
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 ">
           <TeamCard name="Mark Henry" role="Owner" />
           <TeamCard name="Lucky Helen" role="Chef" />
           <TeamCard name="Moon Henry" role="Founder" />
@@ -44,7 +44,7 @@ function TeamCard({ name, role }:TeamProps) {
         <h3 className="font-semibold text-xl">{name}</h3>
         <p className="text-gray-600">{role}</p>
       </div>
-      <div className="absolute top-4 left-4 flex flex-col gap-2">
+      <div className="absolute top-64 left-32 flex flex-col gap-2">
         <FaFacebookF className='w-8 h-8 hover:bg-amber-500 hover:text-white flex items-center justify-center transition-colors'/>
         <FaTwitter className='w-8 h-8hover:bg-amber-500 hover:text-white flex items-center justify-center transition-colors'/>
         <FaYoutube className='bg-amber-500 text-white w-8 h-8 hover:bg-amber-500 hover:text-white flex items-center justify-center transition-colors'/>
