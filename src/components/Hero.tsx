@@ -24,8 +24,8 @@ export default function Hero() {
 
         <ul className='hidden relative -left-44 xl:flex items-center gap-10 font-semibold text-white'>
           <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/'>Home</Link></li>
-          <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/about'>Menu</Link></li>
-          <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/menu'>Blog</Link></li>
+          <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/menu'>Menu</Link></li>
+          <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/blog'>Blog</Link></li>
           <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/pages'>Pages</Link></li>
           <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/about'>About</Link></li>
           <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/shop'>Shop</Link></li>
@@ -47,10 +47,10 @@ export default function Hero() {
         </div>
 
         {/* Menu */}
-        <FiMenu className='relative -left-24 xl:hidden block text-5xl cursor-pointer text-white'
+        <FiMenu className='absolute -left-[120px] xl:hidden block text-5xl cursor-pointer text-white'
           onClick={() => setIsMenuOpen(!isMenuOpen)} />
 
-        <div className={`absolute xl:hidden top-20 left-20 w-64 bg-stone-900 text-white rounded flex flex-col items-center gap-6 font-semibold text-lg transform transition-transform ${isMenuOpen ? "opacity-100" : "opacity-0"}`}
+        <div className={`absolute xl:hidden top-[90px] -left-[150px] w-[500px] bg-stone-900 text-white rounded flex flex-col items-start gap-6 font-semibold text-lg transform transition-transform ${isMenuOpen ? "opacity-100" : "opacity-0"}`}
           style={{ transition: "transform 0.3s ease, opacity 0.3s ease" }} >
           <ul>
             <li className='list-none w-full text-center p-4 hover:text-amber-500 cursor-pointer transition-all'><Link href='/'>Home</Link></li>

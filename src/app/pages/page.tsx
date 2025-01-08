@@ -1,39 +1,25 @@
 import { ChevronRight } from 'lucide-react'
 import Image from 'next/image'
-import Link from 'next/link'
 import bgPic from '/public/images/menutop.png'
+import Nav from '@/components/Nav'
+import Link from 'next/link'
 
 function page() {
   return (
-    <div>
-      <nav className="max-w-[508px] h-6 flex flex-wrap absolute top-2 left-[451px] gap-8 self-stretch text-base text-white max-md:max-w-full" aria-label="Main navigation">
-        <Link href="/" className="grow font-bold text-amber-500" aria-current="page">Home</Link>
-        <Link href="/pages">Pages</Link>
-        <Link href="/pages/chefs">Chefs</Link>
-        <Link href="/pages/check-out">Chekcout</Link>
-        <Link href="/pages/faq">FAQ</Link>
-        <Link href="/pages/error">Error</Link>
+    <div className='w-full'>
+      <div className="flex flex-col">
+        <div className="flex relative flex-col items-center pb-28 w-full min-h-[410px] max-md:pb-24 max-md:max-w-full">
+          <Image src={bgPic} className="object-cover absolute inset-0 size-full" alt="About section background" />
 
-      </nav>
+          <Nav />
 
-      <div className="w-[1920px] h-[410px]">
-        <Image
-          src={bgPic}
-          className="object-contain w-full aspect-[4.67] -z-10"
-          alt="Decorative banner image"
-        />
-        <div className='w-[225px] h-[104px] z-100'>
-          <h1 className='text-white text-5xl font-bold absolute top-[198px] left-[850px] leading-14'>Pages Main</h1>
-
-          <div className='w-[133px] h-7 flex items-center absolute top-[274px] left-[897px]'>
-            <Link href='/' className='text-white text-[20px] leading-7'>Home</Link>
-            <ChevronRight className='w-5 h-5 text-white' />
-            <Link href='menu' className='text-[#ff9f0d] text-[20px] font-normal leading-7'>Pages</Link>
-          </div>
-
+          <h1 className="relative mt-28 text-5xl font-bold leading-none text-white max-md:mt-10 max-md:text-4xl">Pages</h1>
+          <nav className="flex relative gap-1 mt-5 mb-0 max-w-full text-xl leading-snug whitespace-nowrap w-[137px] max-md:mb-2.5" aria-label="Breadcrumb">
+            <a href="/" className="grow text-white hover:text-amber-500">Home</a>
+            <ChevronRight className="object-contain shrink-0 my-auto w-4 aspect-square text-white" />
+            <Link href='/pages' className="text-amber-500" aria-current="page">Pages</Link>
+          </nav>
         </div>
-
-
       </div>
     </div>
   )

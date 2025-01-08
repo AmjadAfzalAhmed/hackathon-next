@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",
+        "name": "Burger",
+        "image": "/images/burger.png",
+        "alternate": "Burger"
+    },
+    {
+        "id": "2",
+        "name": "Fresh Lime",
+        "image": "/images/lime.png",
+        "alternate": "FreshLime"
+    },
+    {
+        "id": "3",
+        "name": "Donuts",
+        "image": "/images/donut.png",
+        "alternate": "Donut"
+    },
+    {
+        "id": "4",
+        "name": "Muffin",
+        "image": "/images/muffin.png",
+        "alternate": "Muffin"
+    },
+    {
+        "id": "5",
+        "name": "Cheese",
+        "image": "/images/cheese.png",
+        "alternate": "Cheese"
+    }
+]
