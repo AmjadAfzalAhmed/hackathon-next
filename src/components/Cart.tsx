@@ -34,7 +34,7 @@ const Cart = () => {
     },
   ]);
 
-  const updateQuantity = (id: number, increment: number) => {
+  const updateQuantity = (id:number | string, increment:boolean) => {
     const updatedItems = cartItems.map((item) => {
       if (item.id === id) {
         const newQuantity = increment
@@ -49,7 +49,7 @@ const Cart = () => {
     setCartItems(updatedItems);
   };
 
-  const removeItem = (id: number) => {
+  const removeItem = (id: string | number) => {
     setCartItems(cartItems.filter((item) => item.id !== id));
   };
 
