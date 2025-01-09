@@ -1,108 +1,127 @@
 'use client'
 
 import Image from 'next/image'
-import { Minus, Plus, Trash2 } from 'lucide-react'
 import { useState } from 'react'
-import cart from '@/components/data/cart.json'
 
+const Cart = () => {
+  const [cartItems, setCartItems] = useState([
+    {
+      id: 1,
+      name: "Burger",
+      price: 35.0,
+      quantity: 1,
+      total: 35.0,
+      image: "/images/donut.png",
+      rating: 4,
+    },
+    {
+      id: 2,
+      name: "Fresh Lime",
+      price: 25.0,
+      quantity: 1,
+      total: 25.0,
+      image: "/images/muffin.png",
+      rating: 5,
+    },
+    {
+      id: 3,
+      name: "Pizza",
+      price: 15.0,
+      quantity: 1,
+      total: 15.0,
+      image: "/images/cheese.png",
+      rating: 3,
+    },
+  ]);
 
+  const updateQuantity = (id: number, increment: number) => {
+    const updatedItems = cartItems.map((item) => {
+      if (item.id === id) {
+        const newQuantity = increment
+          ? item.quantity + 1
+          : item.quantity > 1
+          ? item.quantity - 1
+          : 1;
+        return { ...item, quantity: newQuantity, total: newQuantity * item.price };
+      }
+      return item;
+    });
+    setCartItems(updatedItems);
+  };
 
-export default function ProductRow()
- {
-  const [quantity, setQuantity] = useState(0)
-
-  const incrementQuantity = () => setQuantity(prev => prev + 1)
-  const decrementQuantity = () => setQuantity(prev => (prev > 1 ? prev - 1 : 1))
+  const removeItem = (id: number) => {
+    setCartItems(cartItems.filter((item) => item.id !== id));
+  };
 
   return (
-    <div className="container mx-auto px-4 py-6">
-      {/* Header row */}
-      <div className="min-w-[320px] max-w-[1320px] mb-2">
-        <div className="flex items-center justify-between px-4">
-          <div className="flex-1">
-            <span className="font-semibold">Product</span>
-          </div>
-          <div className="flex-shrink-0 w-24 text-center">
-            <span className="font-semibold">Price</span>
-          </div>
-          <div className="flex-shrink-0 w-32 text-center">
-            <span className="font-semibold">Quantity</span>
-          </div>
-          <div className="flex-shrink-0 w-24 text-center">
-            <span className="font-semibold">Total</span>
-          </div>
-          <div className="flex-shrink-0 w-16 text-center">
-            <span className="font-semibold">Action</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Product row */}
-      <div className="min-w-[320px] max-w-[1320px] h-[120px] mx-auto bg-white rounded-lg shadow-md">
-      {cart.map((cart) => (
-        <div key={cart.id} className="flex items-center justify-between h-full px-4">
-          
-          <div  className="flex items-center space-x-4 flex-1">
-            <div className="w-20 h-20 relative flex-shrink-0">
-              <Image
-                src={cart.image}
-                alt={cart.alternate}
-                layout="fill"
-                objectFit="cover"
-                className="rounded-md"
-              />
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold">{cart.name}</h3>
-              {/* <p className="text-sm text-gray-600">{description}</p> */}
-              <div className="flex items-center mt-1">
-                <Image src={cart.image1} alt="stars" width={80} height={10}/>
-              </div>
-            </div>
-          </div>
-
-          {/* Column 2: Price */}
-          <div className="flex-shrink-0 w-24 text-center">
-            <span className="text-lg font-bold">${cart.price.toFixed(2)}</span>
-          </div>
-
-          {/* Column 3: Quantity */}
-          <div className="flex-shrink-0 w-32">
-            <div className="flex items-center justify-center border rounded-md">
-              <button
-                onClick={decrementQuantity}
-                className="px-2 py-1 text-gray-600 hover:bg-gray-100"
-              >
-                <Minus size={16} />
-              </button>
-              <span className="px-4 py-1">{quantity}</span>
-              <button
-                onClick={incrementQuantity}
-                className="px-2 py-1 text-gray-600 hover:bg-gray-100"
-              >
-                <Plus size={16} />
-              </button>
-            </div>
-          </div>
-
-          {/* Column 4: Total Price */}
-          <div className="flex-shrink-0 w-24 text-center">
-            <span className="text-lg font-bold">
-            ${(cart.price * quantity).toFixed(2)}
-            </span>
-          </div>
-        
-
-          {/* Column 5: Remove Button */}
-          <div className="flex-shrink-0 w-16 flex justify-center">
-            <button className="text-red-500 hover:text-red-700">
-              <Trash2 size={18} />
-            </button>
-          </div>
-        </div>
-        ))}
+    <div className="p-4 md:p-8">
+      <div className="overflow-x-auto">
+        <table className="w-full border-collapse">
+          <thead className="hidden md:table-header-group">
+            <tr className="text-left">
+              <th className="p-4">Product</th>
+              <th className="p-4">Price</th>
+              <th className="p-4">Quantity</th>
+              <th className="p-4">Total</th>
+              <th className="p-4">Remove</th>
+            </tr>
+          </thead>
+          <tbody>
+            {cartItems.map((item) => (
+              <tr key={item.id} className="border-b flex flex-col md:table-row">
+                <td className="p-4 flex items-center">
+                  <Image src={item.image} alt={item.name} width={90} height={100} className="mr-4 hover:scale-90 transition-all" />
+                  <div>
+                    <p className="font-semibold">{item.name}</p>
+                    <div className="flex text-yellow-500">
+                      {Array.from({ length: item.rating }).map((_, index) => (
+                        <span key={index}>⭐</span>
+                      ))}
+                    </div>
+                  </div>
+                </td>
+                <td className="p-4 flex justify-between md:table-cell">
+                  <span className="md:hidden font-semibold">Price:</span>
+                  ${item.price.toFixed(2)}
+                </td>
+                <td className="p-4 flex justify-between items-center md:table-cell">
+                  <span className="md:hidden font-semibold">Quantity:</span>
+                  <div className="flex items-center">
+                    <button
+                      className="px-2 py-1 bg-gray-300 rounded"
+                      onClick={() => updateQuantity(item.id, false)}
+                    >
+                      -
+                    </button>
+                    <span className="mx-2">{item.quantity}</span>
+                    <button
+                      className="px-2 py-1 bg-gray-300 rounded"
+                      onClick={() => updateQuantity(item.id, true)}
+                    >
+                      +
+                    </button>
+                  </div>
+                </td>
+                <td className="p-4 flex justify-between md:table-cell">
+                  <span className="md:hidden font-semibold">Total:</span>
+                  ${item.total.toFixed(2)}
+                </td>
+                <td className="p-4 flex justify-end md:table-cell">
+                  <button
+                    className="text-red-500 hover:text-red-700"
+                    onClick={() => removeItem(item.id)}
+                  >
+                    ❌
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
-  )
-}
+  );
+};
+
+export default Cart;
 

@@ -34,22 +34,7 @@ function Shoppingcart() {
             {/* Mid Section */}
 
             <div className="container flex flex-col gap-8 px-4 mt-8">
-                <Cart />
-                {/* <div className="relative mb-8">
-                    <div className='flex w-full h-32 flex-col'>
-                    {cart.map((cart) => (
-                        <div key={cart.id} className='w-[225px] h-[100px] flex gap-2'>
-                            <Image src={cart.image} alt='Burger' width={90} height={100} />
-                            <div className='flex flex-col'>
-                            <p>{cart.name}</p>
-                            <Image src={stars} alt='stars'width={116} height={20}/>
-                            </div>
-                        </div>
-                    ))}
-                    </div>
-                  
-                </div> */}
-
+                <Cart />    
 
                 {/* Bill Section */}
             
@@ -67,7 +52,7 @@ function Shoppingcart() {
                     </div>
                 </div>
 
-                <div className="totalBill w-full lg:w-1/2">
+                <div className="totalBill w-full lg:w-1/2 mb-10">
                     <p className='font-bold text-xl mb-4'>Total Bill</p>
                     <div className='border border-slate-200 rounded p-4 lg:p-6 flex flex-col'>
                         <div className='flex justify-between'>

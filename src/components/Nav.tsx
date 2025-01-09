@@ -39,10 +39,10 @@ function Nav() {
         </div>
 
         {/* Mobile Menu */}
-        <FiMenu className='relative right-[200px] xl:hidden block text-4xl cursor-pointer text-white'
+        <FiMenu className='absolute -left-[80px] xl:hidden block text-4xl cursor-pointer text-white'
           onClick={() => setIsMenuOpen(!isMenuOpen)} />
 
-        <div className={`absolute xl:hidden top-[90px] -left-[50px] w-[300px] bg-stone-900 text-white rounded flex flex-col items-start gap-6 font-semibold text-lg transform transition-transform ${isMenuOpen ? "opacity-100" : "opacity-0"}`}
+        <div className={`absolute xl:hidden top-[90px] -left-[100px] w-[300px] bg-stone-900 text-white rounded flex flex-col items-start gap-6 font-semibold text-lg transform transition-transform ${isMenuOpen ? "opacity-100" : "opacity-0"}`}
           style={{ transition: "transform 0.3s ease, opacity 0.3s ease" }} >
           <ul>
             <li className='list-none w-full text-center p-4 hover:text-amber-500 cursor-pointer transition-all'><Link href='/'>Home</Link></li>

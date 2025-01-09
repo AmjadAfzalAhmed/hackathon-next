@@ -102,10 +102,10 @@ const CheckOut = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                <button type="button" className="flex-1 flex justify-center items-center px-6 py-3 border border-neutral-200 text-neutral-600 rounded-md hover:bg-gray-50 transition-colors">
+                <Link href='/shop/shoppingcart' className="flex-1 flex justify-center items-center px-6 py-3 border border-neutral-200 text-neutral-600 rounded-md hover:bg-gray-50 transition-colors">
                   <ChevronLeft className="w-5 h-5 mr-2" />
                   Back to cart
-                </button>
+                </Link>
                 <button type="submit" className="flex-1 flex justify-center items-center px-6 py-3 bg-amber-500 text-white rounded-md hover:bg-amber-600 transition-colors">
                   Proceed to shipping
                   <ChevronRight className="w-5 h-5 ml-2" />

@@ -2,41 +2,51 @@
     {
         "id": "1",
         "name": "Burger",
-        "image": "/images/burger.png",
-        "image1": "/images/star.png",
+        "image": "/images/burger.png",        
         "alternate": "Burger",
-        "price": 35.00        
+        "price": 35.00,
+        "rating": 4,
+        "quantity": 0,
+        "total": 25.0        
     },
     {
         "id": "2",
         "name": "Fresh Lime",
-        "image": "/images/lime.png",
-        "image1": "/images/star.png",
+        "image": "/images/lime.png",        
         "alternate": "FreshLime",
-        "price": 25.00        
+        "price": 25.00,
+        "rating": 4,
+        "quantity": 0,
+        "total": 25.0        
     },
     {
         "id": "3",
         "name": "Donuts",
-        "image": "/images/donut.png",
-        "image1": "/images/star.png",
+        "image": "/images/donut.png",        
         "alternate": "Donut",
-        "price": 15.00
+        "price": 15.00,
+        "rating": 5,
+        "quantity": 0,
+        "total": 25.0
     },
     {
         "id": "4",
         "name": "Muffin",
-        "image": "/images/muffin.png",
-        "image1": "/images/star.png",
+        "image": "/images/muffin.png",       
         "alternate": "Muffin",
-        "price": 45.00
+        "price": 45.00,
+        "rating": 3,
+        "quantity": 0,
+        "total": 25.0
     },
     {
         "id": "5",
         "name": "Cheese",
-        "image": "/images/cheese.png",
-        "image1": "/images/star.png",
+        "image": "/images/cheese.png",        
         "alternate": "Cheese",
-        "price": 15.00
+        "price": 15.00,
+        "rating": 4,
+        "quantity": 0,
+        "total": 25.0
     }
 ]

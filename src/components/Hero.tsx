@@ -82,7 +82,7 @@ export default function Hero() {
           </p>
           <Link
             href="/menu"
-            className="inline-block px-8 py-3 bg-amber-500 rounded-full text-neutral-200 hover:bg-amber-600 transition-colors"
+            className="inline-block px-8 py-3 bg-amber-500 rounded-full text-neutral-200 hover:bg-amber-600 transition-color z-10"
           >
             See Menu
           </Link>
