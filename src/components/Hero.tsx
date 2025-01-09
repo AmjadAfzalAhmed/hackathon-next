@@ -47,7 +47,7 @@ export default function Hero() {
         </div>
 
         {/* Menu */}
-        <FiMenu className='absolute -left-[80px] xl:hidden block text-5xl cursor-pointer text-white'
+        <FiMenu className='absolute -left-[100px] xl:hidden block text-5xl cursor-pointer text-white'
           onClick={() => setIsMenuOpen(!isMenuOpen)} />
 
         <div className={`absolute xl:hidden top-[90px] -left-[120px] w-[500px] bg-stone-900 text-white rounded flex flex-col items-start gap-6 font-semibold text-lg transform transition-transform ${isMenuOpen ? "opacity-100" : "opacity-0"}`}
