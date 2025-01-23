@@ -180,10 +180,6 @@ const Menu = () => {
         </footer>
       </div>
 
-
-
-
-
     </main>
   )
 }
