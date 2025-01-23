@@ -5,7 +5,7 @@ import { ArrowUpRight } from 'lucide-react'
 import { IoCalendarNumberOutline } from "react-icons/io5";
 import { GoCommentDiscussion } from 'react-icons/go';
 import { PiUserCirclePlusLight } from 'react-icons/pi';
-import blogPosts from '@/components/data/blogposts.json'
+import blogPosts from '@/data/blogposts.json'
 
 
 const BlogPost: React.FC = () => {

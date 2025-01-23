@@ -5,10 +5,10 @@ import review from '/public/images/review.png'
 import { Input } from '@/components/ui/input'
 import { Search } from 'lucide-react'
 import { FaFacebookF, FaInstagram, FaPinterest, FaTwitter, FaYoutube } from 'react-icons/fa'
-import recent from '@/components/data/recent.json'
-import filter from '@/components/data/filter.json'
-import tags from '@/components/data/popular.json'
-import photos from '@/components/data/gallery.json'
+import recent from '@/data/recent.json'
+import filter from '@/data/filter.json'
+import tags from '@/data/popular.json'
+import photos from '@/data/gallery.json'
 
 
 

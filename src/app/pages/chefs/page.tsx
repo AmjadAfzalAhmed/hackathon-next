@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import bgPic from '/public/images/menutop.png'
-import chefs from '@/components/data/chefs.json'
+import chefs from '@/data/chefs.json'
 import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
 import fastFood from '/public/images/fastFood.png'
