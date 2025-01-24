@@ -1,4 +1,24 @@
-export default {
+type FoodField = {
+  name: string;
+  type: string;
+  title: string;
+  description?: string;
+  options?: {
+    layout?: string;
+    hotspot?: boolean;
+  };
+  of?: { type: string }[]; 
+};
+
+type FoodSchema = {
+  name: string;
+  type: string;
+  title: string;
+  fields: FoodField[];
+};
+
+
+const foods:FoodSchema = {
   name: 'food',
   type: 'document',
   title: 'Food',
@@ -58,3 +78,5 @@ export default {
     },
   ],
 };
+
+export default foods

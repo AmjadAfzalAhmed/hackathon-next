@@ -1,4 +1,22 @@
-export default {
+type ChefField = {
+  name: string;
+  type: string;
+  title: string;
+  description?: string;
+  options?: {
+    hotspot?: boolean;
+  };
+};
+
+type ChefSchema = {
+  name: string;
+  type: string;
+  title: string;
+  fields: ChefField[];
+};
+
+
+const chefs:ChefSchema = {
   name: 'chef',
   type: 'document',
   title: 'Chef',
@@ -48,3 +66,5 @@ export default {
     },
   ],
 };
+
+export default chefs

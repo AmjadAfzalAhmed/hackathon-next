@@ -1,74 +1,56 @@
 [
     {
-        "id": "1",
-        "title": "Chef",
-        "name":"Furqan Haider",
-        "image":"/images/chefs1.png"
+      "name": "Tahmina Rumi",
+      "position": "Head Chef",
+      "experience": 12,
+      "specialty": "Italian Cuisine",
+      "image": "https://sanity-nextjs-rouge.vercel.app/chef/chef-1.png",
+      "description": "Expert in crafting authentic Italian dishes and pastries.",
+      "available": true
     },
     {
-        "id": "2",
-        "title": "Chef",
-        "name":"Jorina Begum",
-        "image":"/images/chefs2.png"
+      "name": "Jorina Begum",
+      "position": "Sous Chef",
+      "experience": 8,
+      "specialty": "Pastry and Desserts",
+      "image": "https://sanity-nextjs-rouge.vercel.app/chef/chef-2.png",
+      "description": "Specializes in creative pastries and dessert innovations.",
+      "available": true
     },
     {
-        "id": "3",
-        "title": "Chef",
-        "name":"Munna Kutty",
-        "image":"/images/chefs3.png"
+      "name": "M. Mohammad",
+      "position": "Grill Master",
+      "experience": 10,
+      "specialty": "Grilled Dishes",
+      "image": "https://sanity-nextjs-rouge.vercel.app/chef/chef-3.png",
+      "description": "Renowned for creating perfectly grilled meats and vegetables.",
+      "available": true
     },
     {
-        "id": "4",
-        "title": "Chef",
-        "name":"Michael Bay",
-        "image":"/images/chefs4.png"
+      "name": "Munna Kathy",
+      "position": "Culinary Instructor",
+      "experience": 15,
+      "specialty": "Asian Fusion",
+      "image": "https://sanity-nextjs-rouge.vercel.app/chef/chef-4.png",
+      "description": "Pioneer in Asian fusion dishes blending traditional flavors with modern techniques.",
+      "available": true
     },
     {
-        "id": "5",
-        "title": "Chef",
-        "name":"Roman Reigns",
-        "image":"/images/chefs5.png"
+      "name": "Bisnu Devgon",
+      "position": "Executive Chef",
+      "experience": 20,
+      "specialty": "Global Cuisine",
+      "image": "https://sanity-nextjs-rouge.vercel.app/chef/chef-5.png",
+      "description": "Expert in international cuisines and menu planning.",
+      "available": true
     },
     {
-        "id": "6",
-        "title": "Chef",
-        "name":"Bisnu Devgan",
-        "image":"/images/chefs6.png"
-    },
-    {
-        "id": "7",
-        "title": "Chef",
-        "name":"Joe Hennings",
-        "image":"/images/chefs7.png"
-    },
-    {
-        "id": "8",
-        "title": "Chef",
-        "name":"Michael Williams",
-        "image":"/images/chefs8.png"
-    },
-    {
-        "id": "9",
-        "title": "Chef",
-        "name":"William Roy",
-        "image":"/images/chefs9.png"
-    },
-    {
-        "id": "10",
-        "title": "Chef",
-        "name":"Muhammad Khalil",
-        "image":"/images/chefs10.png"
-    },
-    {
-        "id": "11",
-        "title": "Chef",
-        "name":"Attaur Rehman",
-        "image":"/images/chefs11.png"
-    },
-    {
-        "id": "12",
-        "title": "Chef",
-        "name":"Muhammad Ali",
-        "image":"/images/chefs12.png"
+      "name": "William Rumi",
+      "position": "Chef de Cuisine",
+      "experience": 18,
+      "specialty": "Seafood Specialties",
+      "image": "https://sanity-nextjs-rouge.vercel.app/chef/chef-6.png",
+      "description": "Master of crafting exquisite seafood dishes with unique flavors.",
+      "available": true
     }
-]
+  ]

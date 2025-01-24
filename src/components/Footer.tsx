@@ -1,4 +1,4 @@
-import Link from "next/link";
+
 import Image from "next/image";
 import fastFood from '/public/images/fastFood.png'
 import watch from '/public/images/Watch.png'
@@ -129,20 +129,22 @@ function Footer() {
           </p>
           <div className="flex space-x-4">
             {[
-              { icon: FaFacebook, label: "Facebook" },
-              { icon: FaTwitter, label: "Twitter" },
-              { icon: FaInstagram, label: "Instagram" },
-              { icon: FaYoutube, label: "YouTube" },
-              { icon: FaLinkedin, label: "LinkedIn" }
+              { icon: FaFacebook, label: "Facebook", url:"https://www.facebook.com"},
+              { icon: FaTwitter, label: "Twitter", url:"https://www.twitter.com" },
+              { icon: FaInstagram, label: "Instagram" ,url:"https://www.instagram.com" },
+              { icon: FaYoutube, label: "YouTube", url:"https://www.youtube.com" },
+              { icon: FaLinkedin, label: "LinkedIn", url:"https://www.linkedin.com" }
             ].map((social, index) => (
-              <Link 
+              <a 
                 key={index}
-                href={`#${social.label.toLowerCase()}`}
+                href={social.url}
                 className="bg-white text-stone-900 p-2 rounded-sm hover:bg-amber-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-amber-600 transition duration-300"
                 aria-label={`Visit our ${social.label} page`}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <social.icon />
-              </Link>
+              </a>
             ))}
           </div>
         </div>

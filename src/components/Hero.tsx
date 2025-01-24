@@ -3,13 +3,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Search } from 'lucide-react'
-import { PiHandbag } from "react-icons/pi"
 import { FaFacebookF, FaTwitter, FaPinterestP } from 'react-icons/fa'
 import backG from '/public/images/heroBack.png'
 import heroImg from '/public/images/hero.png'
 import { FiMenu } from 'react-icons/fi'
 import { useState } from 'react'
 import { Input } from './ui/input'
+import { BsCart3 } from 'react-icons/bs'
 
 export default function Hero() {
 
@@ -29,7 +29,7 @@ export default function Hero() {
           <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/pages'>Pages</Link></li>
           <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/about'>About</Link></li>
           <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/shop'>Shop</Link></li>
-          <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/signup'>Contact</Link></li>
+          <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/signup'>Signup</Link></li>
         </ul>
 
         <div className='relative mb-12 sm:mb-0 -top-6'>
@@ -42,7 +42,7 @@ export default function Hero() {
                <Search className="w-5 h-5 relative -left-10" />          
           
           <Link href="/shop/shoppingcart">
-            <PiHandbag className="w-6 h-6" />
+            <BsCart3 className="w-6 h-6" />
           </Link>
         </div>
 
@@ -102,13 +102,13 @@ export default function Hero() {
       <div className="absolute left-4 top-1/2 transform -translate-y-1/2 hidden lg:flex flex-col items-center space-y-6">
         <div className="w-[2px] h-[158px] bg-white"></div>
         <div className="flex flex-col space-y-4">
-          <a href="#" className="text-white hover:text-amber-500 transition-colors">
+          <a href="https://www.twitter.com" className="text-white hover:text-amber-500 transition-colors">
             <FaFacebookF />
           </a>
-          <a href="#" className="text-amber-500 hover:text-white transition-colors">
+          <a href="https://www.twitter.com" className="text-amber-500 hover:text-white transition-colors">
             <FaTwitter />
           </a>
-          <a href="#" className="text-white hover:text-amber-500 transition-colors">
+          <a href="https://www.pinterest.com" className="text-white hover:text-amber-500 transition-colors">
             <FaPinterestP />
           </a>
         </div>

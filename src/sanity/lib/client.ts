@@ -8,3 +8,26 @@ export const client = createClient({
   apiVersion,
   useCdn: true, // Set to false if statically generating pages, using ISR or tag-based revalidation
 })
+
+export const foodQuery = `*[_type == "food"]{
+  _id,
+  name,
+  category,
+  price,
+  originalPrice,
+  tags,
+  description,
+  available,
+  "imageUrl": image.asset->url
+}`;
+
+export const chefQuery = `*[_type == "chef"]{
+  _id,
+  name,
+  position,
+  experience,
+  specialty,
+  description,
+  available,
+  "imageUrl": image.asset->url
+}`;

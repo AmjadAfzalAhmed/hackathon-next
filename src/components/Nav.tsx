@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { Search, UserRound } from 'lucide-react'
 import Link from 'next/link'
 import { FiMenu } from 'react-icons/fi'
-import { PiHandbag } from 'react-icons/pi'
+import { BsCart3 } from 'react-icons/bs'
 
 function Nav() {
 
@@ -25,16 +25,16 @@ function Nav() {
           <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/pages'>Pages</Link></li>
           <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/about'>About</Link></li>
           <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/shop'>Shop</Link></li>
-          <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/signup'>Contact</Link></li>
+          <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/signup'>Signup</Link></li>
         </ul>
 
         <div className="hidden md:flex items-center ml-20 gap-4">
 
-        <Link href='/signup'> <UserRound className='w-6 h-6 text-white'/></Link>
+        <Link href='/signin'> <UserRound className='w-6 h-6 text-white'/></Link>
           <Search className="w-6 h-6 text-white" />
 
           <Link href="/shop/shoppingcart">
-            <PiHandbag className="w-6 h-6 text-white" />
+            <BsCart3 className="w-6 h-6 text-white" />
           </Link>
         </div>
 

@@ -70,14 +70,14 @@ const page = () => {
                     <br />
                     Menwhile, cheek out these fresh ideas:
                 </div>
-                <a
+                <Link
                     href="/"
                     className="gap-2.5 self-stretch px-12 py-4 mt-8 leading-none text-white bg-amber-500 rounded-md max-md:px-5 text-center hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
 
                     aria-label="Return to homepage"
                 >
                     Go to home
-                </a>
+                </Link>
             </div>
 
 
