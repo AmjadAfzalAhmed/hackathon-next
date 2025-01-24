@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { ChevronRight, Lock, User } from 'lucide-react'
+import { ChevronRight, Lock } from 'lucide-react'
 import bgPic from '/public/images/menutop.png'
 import Link from 'next/link'
 import { Input } from '@/components/ui/input'
@@ -8,9 +8,11 @@ import Google from '/public/images/Google.png'
 import Apple from '/public/images/Apple.png'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import { useSignIn } from '@clerk/nextjs'
+import { useRouter } from 'next/navigation'
 
 
-const SignUp = () => {
+const SignIn = () => {
     return (
         <main className='w-full h-[1800px]' >
             {/* Header */}
@@ -20,24 +22,20 @@ const SignUp = () => {
 
                     <Nav />
 
-                    <h1 className="relative mt-28 text-5xl font-bold leading-none text-white max-md:mt-10 max-md:text-4xl">Signup</h1>
+                    <h1 className="relative mt-28 text-5xl font-bold leading-none text-white max-md:mt-10 max-md:text-4xl">Sign-in</h1>
                     <nav className="flex relative gap-1 mt-5 mb-0 max-w-full text-xl leading-snug whitespace-nowrap w-[137px] max-md:mb-2.5" aria-label="Breadcrumb">
                         <Link href="/" className="grow text-white hover:text-amber-500">Home</Link>
                         <ChevronRight className="object-contain shrink-0 my-auto w-4 aspect-square text-white" />
-                        <Link href='/signup' className="text-amber-500" aria-current="page">Signup</Link>
+                        <Link href='/signup' className="text-amber-500" aria-current="page">Sign-in</Link>
                     </nav>
                 </div>
             </div>
             {/* Mid Section */}
             <div className="flex justify-center items-center min-h-screen bg-gray-100 p-4">
                 <div className="w-full max-w-md bg-white shadow-lg rounded-lg p-6 space-y-6">
-                    <h2 className='text-2xl font-semibold mb-6'>Sign Up</h2>
+                    <h2 className='text-2xl font-semibold mb-6'>Sign In</h2>
 
-                    <div className="space-y-4">
-                        <div className="relative">
-                            <Input placeholder='Name' className='w-full pl-10 border border-solid border-slate-400 rounded' />
-                            <User className='w-5 h-5 absolute top-2 left-3 text-gray-400' />
-                        </div>
+                    <div className="space-y-4">                        
 
                         <div className="relative">
                             <Input placeholder='Email' className='w-full pl-10 border border-solid border-slate-400 rounded' />
@@ -56,7 +54,7 @@ const SignUp = () => {
                     </div>
 
                     <button className='w-full py-2 bg-amber-500 text-white font-semibold text-center rounded hover:bg-amber-600 transition-colors'>
-                        Sign Up
+                        Sign In
                     </button>
 
                     <p className='text-right'><a href="#" className="text-blue-500 hover:underline">Forgot Password?</a></p>
@@ -73,24 +71,24 @@ const SignUp = () => {
                     <div className="space-y-4">
                         <button className='w-full py-2 px-4 border border-solid border-slate-400 flex items-center justify-center space-x-2 rounded hover:bg-gray-50 transition-colors'>
                             <Image src={Google} alt='Google Logo' width={24} height={24} />
-                            <span>Sign up with Google</span>
+                            <span>Sign in with Google</span>
                         </button>
 
                         <button className='w-full py-2 px-4 border border-solid border-slate-400 flex items-center justify-center space-x-2 rounded hover:bg-gray-50 transition-colors'>
                             <Image src={Apple} alt='Apple Logo' width={24} height={24} />
-                            <span>Sign up with Apple</span>
+                            <span>Sign in with Apple</span>
                         </button>
                     </div>
                 </div>
             </div>
 
             {/* Footer */}
-            <div className='sm:w-full sm:absolute sm:top-[1080px]'>
-                <Footer />
+            <div className='sm:w-full sm:absolute sm:top-[1050px]'>
+               <Footer />
             </div>
 
         </main>
     )
 }
 
-export default SignUp
+export default SignIn
