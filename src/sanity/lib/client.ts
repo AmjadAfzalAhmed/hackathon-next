@@ -1,11 +1,23 @@
-import { createClient } from 'next-sanity'
+import { createClient } from 'next-sanity';
 
-import { apiVersion, dataset, projectId } from '../env'
+// Import environment variables safely
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
+const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION!;
 
-const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET, 
-  apiVersion: '2023-01-01', 
+// Validate environment variables to ensure they are defined
+if (!projectId || !dataset || !apiVersion) {
+  throw new Error(
+    "Missing environment variables: Ensure NEXT_PUBLIC_SANITY_PROJECT_ID, NEXT_PUBLIC_SANITY_DATASET, and NEXT_PUBLIC_SANITY_API_VERSION are defined."
+  );
+}
+
+// Export the configured client
+export const client = createClient({
+  projectId,
+  dataset,
+  apiVersion,
+  useCdn: true, 
 });
 
 export const foodQuery = `*[_type == "food"]{
