@@ -16,6 +16,11 @@ import { useState } from 'react'
 import { Label } from '@/components/ui/label'
 
 
+interface ClerkError {
+    errors: Array<{
+        message: string;
+    }>;
+}
 
 const SignUp = () => {
     const { isLoaded, signUp, setActive } = useSignUp();
@@ -33,7 +38,7 @@ const SignUp = () => {
     }
 
     async function submit(e: React.FormEvent) {
-        e.preventDefault()
+        e.preventDefault();
         if (!isLoaded) {
             return;
         }
@@ -41,23 +46,22 @@ const SignUp = () => {
         try {
             await signUp.create({
                 emailAddress,
-                password
+                password,
             });
 
             await signUp.prepareEmailAddressVerification({
-                strategy: "email_code"
+                strategy: "email_code",
             });
 
             setPendingVerification(true);
-
-        } catch (error: any) {
-
-            setError(error.errors[0]?.message || "An error occured");
+        } catch (err) {
+            const error = err as ClerkError;
+            setError(error.errors[0]?.message || "An error occurred");
         }
     }
 
     async function onPressVerify(e: React.FormEvent) {
-        e.preventDefault()
+        e.preventDefault();
         if (!isLoaded) {
             return;
         }
@@ -68,21 +72,21 @@ const SignUp = () => {
             });
 
             if (completeSignup.status !== "complete") {
-
+                
             }
             if (completeSignup.status === "complete") {
                 await setActive({ session: completeSignup.createdSessionId });
-                router.push("/signin")
+                router.push("/signin");
             }
-
-        } catch (error: any) {
-            setError(error.errors[0]?.message || "verification failed")
+        } catch (err) {
+            const error = err as ClerkError;
+            setError(error.errors[0]?.message || "Verification failed");
         }
-        return
-    }
+    }    
 
     return (
         <main className='w-full h-[1800px]' >
+
             {/* Header */}
             <div className="flex flex-col">
                 <div className="flex relative flex-col items-center pb-28 w-full min-h-[410px] max-md:pb-24 max-md:max-w-full">
