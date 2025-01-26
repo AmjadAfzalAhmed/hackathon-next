@@ -32,7 +32,6 @@ const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false);
 
     const router = useRouter();
-
     if (!isLoaded) {
         return null;
     }
@@ -85,6 +84,7 @@ const SignUp = () => {
     }    
 
     return (
+
         <main className='w-full h-[1800px]' >
 
             {/* Header */}
@@ -155,7 +155,7 @@ const SignUp = () => {
                                 Sign Up
                             </button>
                         </form>
-                        
+
                     ) : (
                         <form onSubmit={onPressVerify} className="space-y-4">
                             <div className="relative">
@@ -204,6 +204,7 @@ const SignUp = () => {
                     </div>
                 </div>
             </div>
+            
             {/* Footer */}
             <div className='sm:w-full sm:absolute sm:top-[1080px]'>
                 <Footer />
