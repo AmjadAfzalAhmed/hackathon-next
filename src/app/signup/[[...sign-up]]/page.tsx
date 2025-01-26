@@ -146,8 +146,6 @@ const SignUp = () => {
                                 </Label>
                             </div>
 
-
-
                             {error && <p className="text-red-500 text-sm">{error}</p>}
 
                             <button
@@ -157,6 +155,7 @@ const SignUp = () => {
                                 Sign Up
                             </button>
                         </form>
+                        
                     ) : (
                         <form onSubmit={onPressVerify} className="space-y-4">
                             <div className="relative">
