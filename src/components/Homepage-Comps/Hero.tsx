@@ -8,7 +8,7 @@ import backG from '/public/images/heroBack.png'
 import heroImg from '/public/images/hero.png'
 import { FiMenu } from 'react-icons/fi'
 import { useState } from 'react'
-import { Input } from './ui/input'
+import { Input } from '@/components/ui/input'
 import { BsCart3 } from 'react-icons/bs'
 
 export default function Hero() {

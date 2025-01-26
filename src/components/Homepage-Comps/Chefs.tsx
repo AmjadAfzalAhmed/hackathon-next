@@ -26,7 +26,7 @@ export default function Chefs() {
           <ChefCard image={card4} name="Mike Johnson"  />
         </div>
         <div className="text-center">
-          <Link href="/pages/chefs" className="inline-block px-8 py-3 border border-amber-500 text-white rounded-full hover:bg-amber-500 transition-colors">
+          <Link href="/chefs" className="inline-block px-8 py-3 border border-amber-500 text-white rounded-full hover:bg-amber-500 transition-colors">
             See More
           </Link>
         </div>

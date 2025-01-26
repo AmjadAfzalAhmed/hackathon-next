@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { ChevronRight, Lock, User } from 'lucide-react'
+import { ChevronRight, Lock } from 'lucide-react'
 import bgPic from '/public/images/menutop.png'
 import Link from 'next/link'
 import { Input } from '@/components/ui/input'
@@ -14,7 +14,7 @@ import { useSignUp } from '@clerk/nextjs'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { Label } from '@/components/ui/label'
-import { Button } from '@/components/ui/button'
+
 
 
 const SignUp = () => {
@@ -107,7 +107,7 @@ const SignUp = () => {
                         <form onSubmit={submit} className="space-y-4">
                             {/* Email Input */}
                             <div className="relative">
-                                <input
+                                <Input
                                     type="email"
                                     placeholder="Email"
                                     className="w-full h-12 pl-10 border border-solid border-slate-400 rounded"
@@ -169,12 +169,12 @@ const SignUp = () => {
                                     {error && <p className="text-red-500 text-sm">{error}</p>}
                              
 
-                            <Button
+                            <button
                                 type="submit"
                                 className="w-full py-2 bg-green-500 text-white font-semibold text-center rounded hover:bg-green-600 transition-colors"
                             >
                                 Verify Email
-                            </Button>
+                            </button>
                         </form>
                     )}
 
@@ -187,7 +187,7 @@ const SignUp = () => {
                         </div>
                     </div>
 
-                    {/* Social Signup Buttons */}
+                    {/* Social Signup buttons */}
                     <div className="space-y-4">
                         <button className="w-full py-2 px-4 border border-solid border-slate-400 flex items-center justify-center space-x-2 rounded hover:bg-gray-50 transition-colors">
                             <Image src={Google} alt='Google Logo' width={20} height={20} />

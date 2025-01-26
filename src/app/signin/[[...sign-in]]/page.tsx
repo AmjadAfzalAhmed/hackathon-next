@@ -8,8 +8,8 @@ import Google from '/public/images/Google.png'
 import Apple from '/public/images/Apple.png'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
-import { useSignIn } from '@clerk/nextjs'
-import { useRouter } from 'next/navigation'
+// import { useSignIn } from '@clerk/nextjs'
+// import { useRouter } from 'next/navigation'
 
 
 const SignIn = () => {
@@ -69,13 +69,13 @@ const SignIn = () => {
                     </div>
 
                     <div className="space-y-4">
-                        <button className='w-full py-2 px-4 border border-solid border-slate-400 flex items-center justify-center space-x-2 rounded hover:bg-gray-50 transition-colors'>
-                            <Image src={Google} alt='Google Logo' width={24} height={24} />
+                        <button className='w-full py-2 px-4 border border-solid border-slate-400 flex items-center justify-center space-x-2 rounded hover:bg-amber-500 transition-colors'>
+                            <Image src={Google} alt='Google Logo' width={20} height={20} />
                             <span>Sign in with Google</span>
                         </button>
 
-                        <button className='w-full py-2 px-4 border border-solid border-slate-400 flex items-center justify-center space-x-2 rounded hover:bg-gray-50 transition-colors'>
-                            <Image src={Apple} alt='Apple Logo' width={24} height={24} />
+                        <button className='w-full py-2 px-4 border border-solid border-slate-400 flex items-center justify-center space-x-2 rounded hover:bg-amber-500 transition-colors'>
+                            <Image src={Apple} alt='Apple Logo' width={20} height={20} />
                             <span>Sign in with Apple</span>
                         </button>
                     </div>
