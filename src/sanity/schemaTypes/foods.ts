@@ -1,82 +1,30 @@
-type FoodField = {
-  name: string;
-  type: string;
-  title: string;
-  description?: string;
-  options?: {
-    layout?: string;
-    hotspot?: boolean;
-  };
-  of?: { type: string }[]; 
-};
-
-type FoodSchema = {
-  name: string;
-  type: string;
-  title: string;
-  fields: FoodField[];
-};
-
-
-const foods:FoodSchema = {
-  name: 'food',
-  type: 'document',
-  title: 'Food',
+export default {
+  name: "recentPosts",
+  title: "Recent Posts",
+  type: "document",
   fields: [
     {
-      name: 'name',
-      type: 'string',
-      title: 'Food Name',
+      name: "id",
+      title: "ID",
+      type: "number"
     },
     {
-      name: 'category',
-      type: 'string',
-      title: 'Category',
-      description:
-        'Category of the food item (e.g., Burger, Sandwich, Drink, etc.)',
+      name: "date",
+      title: "Date",
+      type: "date"
     },
     {
-      name: 'price',
-      type: 'number',
-      title: 'Current Price',
-    },
-    {
-      name: 'originalPrice',
-      type: 'number',
-      title: 'Original Price',
-      description: 'Price before discount (if any)',
-    },
-    {
-      name: 'tags',
-      type: 'array',
-      title: 'Tags',
-      of: [{ type: 'string' }],
+      name: "image",
+      title: "Image",
+      type: "image",
       options: {
-        layout: 'tags',
-      },
-      description: 'Tags for categorization (e.g., Best Seller, Popular, New)',
+        hotspot: true
+      }
     },
     {
-      name: 'image',
-      type: 'image',
-      title: 'Food Image',
-      options: {
-        hotspot: true,
-      },
-    },
-    {
-      name: 'description',
-      type: 'text',
-      title: 'Description',
-      description: 'Short description of the food item',
-    },
-    {
-      name: 'available',
-      type: 'boolean',
-      title: 'Available',
-      description: 'Availability status of the food item',
-    },
-  ],
+      name: "excerpt",
+      title: "Excerpt",
+      type: "text"
+    }
+  ]
 };
-
-export default foods

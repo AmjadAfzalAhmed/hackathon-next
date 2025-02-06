@@ -202,7 +202,7 @@ export default function RestaurantPage() {
           alt="Restaurant background"
           layout="fill"
           objectFit="cover"
-          className="absolute inset-0 z-0 opacity-35"
+          className="absolute inset-0 z-0 opacity-35 md:h-[100px]"
         />
         <div className="relative z-10 bg-black bg-opacity-60 py-16">
           <div className="container mx-auto px-4">
@@ -214,7 +214,7 @@ export default function RestaurantPage() {
                 { icon: pizza, value: '220+', label: 'Happy Customers' },
               ].map((stat, index) => (
                 <div key={index} className="flex flex-col items-center">
-                  <Image src={stat.icon} alt={stat.label} width={80} height={80} className="mb-4" />
+                  <Image src={stat.icon} alt={stat.label} width={80} height={80} className="mb-4 hover:scale-90 hoverEffect" />
                   <div className="text-3xl font-bold mb-2">{stat.value}</div>
                   <div className="text-lg text-center">{stat.label}</div>
                 </div>
@@ -240,23 +240,37 @@ export default function RestaurantPage() {
         imagePosition="right"
       />
 
-      <section className="py-16 sm:mb-20">
+     {/* Partners & Clients */}
+     <section className="py-16 sm:mb-20 overflow-hidden">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold text-center mb-2">Partners & Clients</h2>
           <h3 className="text-3xl md:text-4xl font-bold text-center mb-8">We work with the best people</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {[
-              { src: restaurant, alt: 'Restaurant logo' },
-              { src: baker, alt: 'Baker logo' },
-              { src: fork, alt: 'Fork logo' },
-              { src: wolf, alt: 'Wolf logo' },
-              { src: bistro, alt: 'Bistro logo' },
-              { src: bakery, alt: 'Bakery logo' },
-            ].map((partner, index) => (
-              <div key={index} className="flex items-center justify-center p-4">
-                <Image src={partner.src} alt={partner.alt} width={150} height={100} objectFit="contain" />
-              </div>
-            ))}
+          <div className="relative w-full overflow-hidden">
+            {/* Single Row with Duplicated Logos for Seamless Animation */}
+            <div className="flex animate-scroll items-center gap-8">
+              {[
+                { src: restaurant, alt: 'Restaurant logo' },
+                { src: baker, alt: 'Baker logo' },
+                { src: fork, alt: 'Fork logo' },
+                { src: wolf, alt: 'Wolf logo' },
+                { src: bistro, alt: 'Bistro logo' },
+                { src: bakery, alt: 'Bakery logo' },
+                // Duplicate the logos for smoother animation
+                { src: restaurant, alt: 'Restaurant logo' },
+                { src: baker, alt: 'Baker logo' },
+                { src: fork, alt: 'Fork logo' },
+                { src: wolf, alt: 'Wolf logo' },
+                { src: bistro, alt: 'Bistro logo' },
+                { src: bakery, alt: 'Bakery logo' },
+              ].map((partner, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0 transform transition-transform duration-300 hover:scale-110"
+                >
+                  <Image src={partner.src} alt={partner.alt} width={150} height={100} objectFit="contain" />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

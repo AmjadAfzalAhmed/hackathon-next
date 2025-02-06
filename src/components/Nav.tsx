@@ -1,63 +1,80 @@
-'use client'
+import { ClerkLoaded, SignInButton, UserButton } from "@clerk/nextjs";
+import { currentUser } from "@clerk/nextjs/server";
+import { ShoppingBasket, User } from 'lucide-react';
+import Link from 'next/link';
+import CartIcon from './Cart/CartIcon';
+import MobileNav from "./Homepage-Comps/MobileNav";
 
-import React, { useState } from 'react'
-import { Search, UserRound } from 'lucide-react'
-import Link from 'next/link'
-import { FiMenu } from 'react-icons/fi'
-import { BsCart3 } from 'react-icons/bs'
-
-function Nav() {
-
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+async function Nav() {
+  const user = await currentUser();
 
   return (
     <div className='bg-black'>
-      <nav className='flex justify-between items-center gap-14 py-6 px-8 md:px-32 drop-shadow-md'>
+      <nav className='flex justify-between items-center py-4 px-4 sm:px-8 md:px-[150px] drop-shadow-md'>
 
-        <div className='relative mb-12 sm:mb-0'>
-          <a href="www.mysite.com" className='w-52 hover:scale-105 transition-all text-2xl text-white'>F<span className='text-amber-500'>oo</span>dtuck</a>
+        {/* Logo */}
+        <div className='flex items-center'>
+          <a href="www.mysite.com" className='text-2xl text-white hover:scale-105 transition-all'>
+            F<span className='text-amber-500'>oo</span>dtuck
+          </a>
         </div>
 
-        <ul className='hidden ml-20 xl:flex items-center gap-10 font-semibold text-white'>
-          <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/'>Home</Link></li>
-          <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/menu'>Menu</Link></li>
-          <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/blog'>Blog</Link></li>
-          <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/about'>About</Link></li>
-          <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/shop'>Shop</Link></li>
-          <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/signup'>Sign-up</Link></li>
-          <li className='font-normal hover:text-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-md transition-all'><Link href='/signin'>Sign-in</Link></li>
+        {/* Desktop Navigation Links */}
+        <ul className='hidden lg:flex items-center gap-7 font-semibold text-white ml-10'>
+          <li className='hover:text-amber-500 transition-all'><Link href='/'>Home</Link></li>
+          <li className='hover:text-amber-500 transition-all'><Link href='/menu'>Menu</Link></li>
+          <li className='hover:text-amber-500 transition-all'><Link href='/blog'>Blog</Link></li>
+          <li className='hover:text-amber-500 transition-all'><Link href='/about'>About</Link></li>
+          <li className='hover:text-amber-500 transition-all'><Link href='/shop'>Shop</Link></li>
+          <li className='hover:text-amber-500 transition-all'><Link href='/contact-us'>Contact</Link></li>
         </ul>
 
-        <div className="hidden md:flex items-center ml-20 gap-4">
+        {/* Desktop User Actions */}
+        <div className="hidden ml-16 lg:flex items-center gap-4">
+          <Link href='/signin'>
+            <ClerkLoaded>
+              {user ? (
+                <div className='flex items-center gap-2'>
+                  <UserButton />
+                  <div className='flex flex-col'>
+                    <p className='text-xs text-gray-200'>Welcome Back</p>
+                    <p className='font-semibold text-gray-200'>{user?.fullName}</p>
+                  </div>
+                </div>
+              ) : (
+                <SignInButton mode='modal'>
+                  <div className='flex items-center gap-2 border border-gray-200 px-2 py-1 rounded-md shadow-md hover:shadow-none transition-all'>
+                    <User className='text-gray-200 w-5 h-5' />
+                    <div className='flex flex-col'>
+                      <p className='text-xs font-semibold text-gray-200'>Account</p>
+                      <p className='font-semibold text-gray-200'>Login</p>
+                    </div>
+                  </div>
+                </SignInButton>
+              )}
+            </ClerkLoaded>
+          </Link>
 
-        <Link href='/signin'> <UserRound className='w-6 h-6 text-white'/></Link>
-          <Search className="w-6 h-6 text-white" />
+          <CartIcon />
 
-          <Link href="/shop/shoppingcart">
-            <BsCart3 className="w-6 h-6 text-white" />
+          <Link href='/shop/shoppingcart' className='flex items-center gap-2 px-3 py-2 rounded-md shadow-md hover:shadow-none transition-all'>
+            <ShoppingBasket className='text-gray-200 w-5 h-5' />
+            <div className='flex flex-col'>
+              <p className='text-xs font-semibold text-gray-200'>
+                <span className='font-bold'>0</span> items
+              </p>
+              <p className='font-medium text-gray-200'>Orders</p>
+            </div>
           </Link>
         </div>
 
-        {/* Mobile Menu */}
-        <FiMenu className='absolute -left-[80px] xl:hidden block text-4xl cursor-pointer text-white'
-          onClick={() => setIsMenuOpen(!isMenuOpen)} />
-
-        <div className={`absolute xl:hidden top-[90px] -left-[100px] w-[300px] bg-stone-900 text-white rounded flex flex-col items-start gap-6 font-semibold text-lg transform transition-transform ${isMenuOpen ? "opacity-100" : "opacity-0"}`}
-          style={{ transition: "transform 0.3s ease, opacity 0.3s ease" }} >
-          <ul>
-            <li className='list-none w-full text-center p-4 hover:text-amber-500 cursor-pointer transition-all'><Link href='/'>Home</Link></li>
-            <li className='list-none w-full text-center p-4 hover:text-amber-500 cursor-pointer transition-all'><Link href='/menu'>Menu</Link></li>
-            <li className='list-none w-full text-center p-4 hover:text-amber-500 cursor-pointer transition-all'><Link href='/blog'>Blog</Link></li>
-            <li className='list-none w-full text-center p-4 hover:text-amber-500 cursor-pointer transition-all'><Link href='/pages'>Pages</Link></li>
-            <li className='list-none w-full text-center p-4 hover:text-amber-500 cursor-pointer transition-all'><Link href='/about'>About</Link></li>
-            <li className='list-none w-full text-center p-4 hover:text-amber-500 cursor-pointer transition-all'><Link href='/shop'>Shop</Link></li>
-            <li className='list-none w-full text-center p-4 hover:text-amber-500 cursor-pointer transition-all'><Link href='/contact'>Contact</Link></li>
-          </ul>
-
+        {/* Mobile Menu Toggle */}
+        <div className="lg:hidden">
+          <MobileNav />
         </div>
       </nav>
     </div>
-  )
+  );
 }
 
-export default Nav
+export default Nav;
